@@ -1,5 +1,19 @@
 // singleton
-const ETHEREUM_URL = "http://localhost:8545";
+// singleton
+function parserUrl() {
+	const splites = window.location.search.split('?');
+
+	return splites.length > 1 && splites[1]
+		.split('&')
+		.reduce((acc, cur) => {
+			const [key, value] = cur.split('=');
+			acc[key] = value;
+			return acc
+		}, {});
+}
+
+const { host='localhost', port='8545' } = parserUrl();
+const ETHEREUM_URL = `http://${host}:${port}`;
 const ABI = [
 	{
 		"inputs": [
