@@ -39,6 +39,14 @@ hr.information-hr:after {
   color: #868E96;
   /* font-size: 0.8em; */
 }
+hr.connection-hr:after {
+  content: "노드연결";
+  position: relative;
+  top: -7px;
+  padding: 0 10px;
+  color: #868E96;
+  /* font-size: 0.8em; */
+}
 
 .container {
   width: 100%;
@@ -146,4 +154,63 @@ button {
 .information .datetime {
   display: flex;
   justify-content: space-between;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+.connection {
+  padding: 12px;
+  width: 100%;
+}
+
+.connection > div{ 
+  padding: 12px;
+}
+.connection .btn {
+  padding: 12px;
+}
+.connection .btn button{ 
+  width: 100%;
+}
+
+.connection > div.btn .indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 900px) {
+  .connection {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    width: 100%;
+  }
+  .connection > div {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .connection > div > input {
+    width: 100%;
+  }
+  
+  .connection > div.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .connection .btn button{ 
+    width: 120px;
+  }
+  
 }

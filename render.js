@@ -1,7 +1,8 @@
 class Render {
-  constructor(accountManager, nftInformation) {
+  constructor(accountManager, nftInformation, indicator) {
     this.am = accountManager;
     this.ni = nftInformation;
+    this.indicator = indicator;
   }
 
   async accountManager() {
@@ -10,6 +11,10 @@ class Render {
 
   async nftInformation(tokenId) {
     await this.ni.render(tokenId);
+  }
+
+  async onNodeByIndicator() {
+    this.indicator.render();
   }
 }
 
@@ -42,3 +47,11 @@ class NftInformation {
   }
 }
 
+class Indicator {
+  constructor() {}
+
+  render() {
+    const indicatorDom = document.querySelector('.indicator');
+    indicatorDom.setAttribute('class', 'indicator green');
+  }
+}

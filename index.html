@@ -13,6 +13,29 @@
 </head>
 
 <body>
+  <hr class="connection-hr">
+  <div class="connection">
+    <div>
+      <input type="text" id="ca" placeholder="ERC721로 만든 Contract Address">
+    </div>
+    <div>
+      <input type="text" id="eth-host" value="localhost" placeholder="이더리움 노드 호스트 주소(localhost)">
+    </div>
+    <div>
+      <input type="text" id="eth-port" value="8545" placeholder="이더리움 노드 포트번호(8545)">
+    </div>
+    <div>
+      <input type="text" id="ipfs-host" value="localhost" placeholder="IPFS 노드 호스트 주소(localhost)">
+    </div>
+    <div>
+      <input type="text" id="ipfs-port" value="5002" placeholder="IPFS 노드 포트번호(5001)">
+    </div>
+    <div class="btn">
+      <div class="indicator red"></div>
+      <button id="node-connect">연결</button>
+    </div>
+  </div>
+
   <hr class="account-hr">
   <div class="account container">
     <div class="private-key">
@@ -63,11 +86,11 @@
     <div class="nft-desc">
       <div class="author">
         <div>작성자 </div>
-        <div id="nft-desc-author">박정태</div>
+        <div id="nft-desc-author"></div>
       </div>
       <div class="datetime">
         <div>작성된 날짜 </div>
-        <div id="nft-desc-datetime">2022-10-08</div>
+        <div id="nft-desc-datetime"></div>
       </div>
       <div class="img">
         <img src="" id="nft-desc-img"></img>

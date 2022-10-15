@@ -11,9 +11,12 @@ function parserUrl() {
 }
 
 const { host='localhost', port='8545', ipfshost='localhost', ipfsport='5002' } = parserUrl();
-const url = `http://${host}:${port}`;
-const web3 = new Web3(new Web3.providers.HttpProvider(url));
-const ipfs = IpfsHttpClient.create(`http://${ipfshost}:${ipfsport}`);
+let url = null; //`http://${host}:${port}`;
+let web3 = null; // new Web3(new Web3.providers.HttpProvider(url));
+let ipfs = null; // IpfsHttpClient.create(`http://${ipfshost}:${ipfsport}`);
+let CA = null // '0x9fFBDa686036bC9fE1590e1d8178b36Fe67EfbAb';
+
+let contract =null// new web3.eth.Contract(ABI, CA)
 
 let pk = ''
 const ABI = [
@@ -421,9 +424,18 @@ const ABI = [
 		"type": "function"
 	}
 ]
-const CA = '0x9fFBDa686036bC9fE1590e1d8178b36Fe67EfbAb';
 
-let contract = new web3.eth.Contract(ABI, CA)
+function setNode(ethHost, ethPort, ipfsHost, ipfsPort) {
+	url = `http://${ethHost}:${ethPort}`;
+	web3 = new Web3(new Web3.providers.HttpProvider(url))
+	ipfs = IpfsHttpClient.create(`http://${ipfsHost}:${ipfsPort}`);
+}
+
+function setContract(ca) {
+	CA = ca;
+	contract = new web3.eth.Contract(ABI, CA)
+}
+
 
 async function pkToAccount(pk) {
   const { address } = await web3.eth.accounts.privateKeyToAccount(pk);
