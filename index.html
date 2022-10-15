@@ -1,13 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+  <title>Document</title>
+
+  <link href="./style.css" rel="stylesheet">
 </head>
+
 <body>
-  <h1>안녕하세요. 오늘이 벌써 마지막 수업시간이네요~</h1>
+  <div class="submit search-container">
+    <div class="wr-70">
+      <input type="text" id="balance" placeholder="" disabled>
+    </div>
+    <div class="wr-30">
+      <button id="send-btn">보내기</button>
+    </div>
+  </div>
+
+  <div class="radio">
+    <label for="eth">ETH</label>
+    <input id="eth" type="radio" name="type" value="eth" checked>
+    <label for="erc20">ERC20</label>
+    <input id="erc20" type="radio" name="type" value="erc20">
+  </div>
+
+  <div class="create-account search-container">
+    <div class="wr-35">
+      <input type="text" id="pk" placeholder="개인키를 입력해주세요" value="">
+    </div>
+    <div class="wr-35">
+      <input type="text" id="ca" placeholder="CA를 입력해주세요" value="">
+    </div>
+    <div class="wr-30">
+      <button id="recovery-btn">복구</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <input type="text" id="to" placeholder="to">
+    <input type="text" id="value" placeholder="value(ETH)">
+    <button id="confirm-btn">확인</button>
+  </div>
+
+  <script src="./state.js"></script>
+  <script src="./wallet.js"></script>
+  <script src="./erc20.js"></script>
+  <script src="./eth.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
