@@ -1,76 +1,149 @@
 * {
-  margin: 0;
   padding: 0;
-  font-size: 0;
-}
-.search-container {
-  display: flex;
-  font-size: 12px;
-  width: 100%;
+  margin: 0;
+  /* font-size: 0; */
+  background-color: #eee;
 }
 
-button, input {
-  height: 36px;
-  font-size: 16px;
-  padding: 12px;
+hr {
+  border: none;
+  /* border-top: 1px solid #E3E7EB; */
+  overflow: visible;
+  text-align: center;
+  margin-top: 24px;
+  height: 17px;
+}
+hr.account-hr:after {
+  content: "계정관리";
+  position: relative;
+  top: -7px;
+  padding: 0 10px;
+  color: #868E96;
+  /* font-size: 0.8em; */
+}
+
+hr.mint-hr:after {
+  content: "NFT 발행";
+  position: relative;
+  top: -7px;
+  padding: 0 10px;
+  color: #868E96;
+  /* font-size: 0.8em; */
+}
+
+hr.information-hr:after {
+  content: "NFT 조회";
+  position: relative;
+  top: -7px;
+  padding: 0 10px;
+  color: #868E96;
+  /* font-size: 0.8em; */
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-label {
-  font-size: 16px;
+.account .private-key,
+.account .balance {
+  padding: 5px;
 }
 
-.radio {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-}
-
-.radio label,
-.radio input {
-  padding: 12px;
-}
-
-.wr-70{
-  width: 70%;
-}
-.wr-35{
-  width: 35%;
-}
-
-.wr-30{
-  width: 30%;
-}
-
-.search-container input, 
-.search-container button {
+.account .private-key button {
+  margin-top: 15px;
   width: 100%;
 }
 
-.create-account {
-  position: absolute;
-  bottom: 0;
+input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 0;
+  background-color: white;
 }
 
-.popup {
-  width: 300px; 
-  height: 150px;
-  border: 1px solid red; 
-  background-color: white;
+label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  /* 파일 필드 숨기기 */
   position: absolute;
-  transform: translate(70%, 70%);
-  display: none;
-  flex-direction: column;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+button {
+  border-radius: 5px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 0;
+  background-color: #F39C12;
+  color: #eee;
+  cursor: pointer;
+}
+
+.account .balance {
+  font-size: 25px;
+}
+
+.account .balance .eth,
+.account .balance .nft {
+  display: flex;
   justify-content: space-between;
 }
 
-.popup input {
-  margin: 10px 0 10px 0;
+.mint>div {
+  padding: 5px;
 }
 
-.show {
+.mint>div,
+.mint>div>input,
+.mint>div>button {
+  width: 100%;
+}
+
+.information>div {
+  width: 100%;
+  padding: 5px;
+}
+
+.information>div>button {
+  width: 100%;
+}
+
+.information .nft-desc img,
+.information .author,
+.information .datetime {
+  width: 100%;
+  font-size: 24px;
+}
+
+.information .author,
+.information .datetime {
   display: flex;
+  justify-content: space-between;
 }

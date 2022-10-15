@@ -1,12 +1,52 @@
-# 기능정의서 (SPA)
+# 기능정의서
 
-* 계정생성(어떤 형태: pk, 키스토어 파일, 니모닉)
+## 계정관리
 
-* 계정 가지고 오기(pk)
+1. 지갑 가져오기(private key를 입력받아서 버튼을 누른다.)
+2. 보유하고 있는 이더리움 잔액
+3. NFT 토큰 수량
 
-* 이더리움 잔액 조회
-* 이더리움 전송
+## NFT
 
-* ERC20 컨트랙트 등록
-* ERC20 잔액조회
-* ERC20 전송
+1. 발행
+
+  폼데이터
+    1.1. 이미지 => IPFS
+    1.2. 작성자
+    1.3. 업로드 날짜(timestamp/ms => 문자열) -> 사용자로부터 입력받지 않음
+
+2. NFT 토큰을 가지고 발행정보 조회
+
+3. 이미지를 업로드 된 이미지 익스플로러 사이트 이동
+
+
+
+
+```
+
+Available Accounts
+==================
+(0) 0x5FaF5dE9C595a3A865E8788952d13A2e613CD54B (100 ETH)
+(1) 0x5B85334b5a0683952A72e75a11ceCBae2a4bf636 (100 ETH)
+(2) 0xd7B7cFFD9936CA39c7Ac7c82a9e7315D9A6730F8 (100 ETH)
+(3) 0xEAE6aAC6B9941090CEce0074D99e94caa75f4b20 (100 ETH)
+(4) 0xd6a5fD995d2Aa757a1E3e0280f5A6e2C9C580d8D (100 ETH)
+(5) 0x8F0E3538f4D8DAAEB7caa58f696ee1CeD8776D5E (100 ETH)
+(6) 0xE429624Ad2c92D12d4ebEE21Ed5F19c3C781bB14 (100 ETH)
+(7) 0x3805774d58eF5d930e98382ffAdB0a21272D467d (100 ETH)
+(8) 0xf03A2F287CDe31c80bf1EbD4deB720d62ED6C129 (100 ETH)
+(9) 0x8d473f44Cc665A555D12B0Da09D7a4e583B10E2E (100 ETH)
+
+Private Keys
+==================
+(0) 0xcbd72596af26606bb7b367cf8e9639d5b346c9bfacb2534a20235e6559f0f9d6
+(1) 0x6dfd34511d1f9e639e5c8ad6e628ef912c331ff5623d9bee1bff29316b7e70a4
+(2) 0x6da368f19c9a0c8d975eb84adf55d66a0a165872a9c87912056f33e38fc4168b
+(3) 0xcaf7c45fd641a9a611b275a5ac66e8876c77a79a94cf136f8f298005d2fcbd83
+(4) 0x4b9a14a723600a30945ad45481c471fa16521540b0ad0b63e69f5c18596342d6
+(5) 0x25f5ef535af29fa797bf1e6d59bee6f82cbe37aa686309ae6e51e9830c3308d9
+(6) 0x6e25f9ddb3d2ea53e7eeeeaebdc0560fa8b2467fbc4ef799b3c32a7c251612d7
+(7) 0x9015d8778bb3bbd11a430b12402ef6eae9abbc1d5f01d1e5f94c7fe27ab456a0
+(8) 0xd1c8813b8aeef32ab22559c9d91b9925bcb14b98ddedf85977b27ee650064397
+(9) 0x896e1621042805d0a737561f71736b0cad13129559b282f683821bc549e1e43f
+```

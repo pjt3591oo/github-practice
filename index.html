@@ -5,51 +5,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
-  <title>Document</title>
-
-  <link href="./style.css" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js" integrity="sha512-bSQ2kf76XufUYS/4XinoHLp5S4lNOyRv0/x5UJACiOMy8ueqTNwRFfUZWmWpwnczjRp9SjiF1jrXbGEim7Y0Xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client/dist/index.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>NFT 민팅</title>
 </head>
 
 <body>
-  <div class="submit search-container">
-    <div class="wr-70">
-      <input type="text" id="balance" placeholder="" disabled>
+  <hr class="account-hr">
+  <div class="account container">
+    <div class="private-key">
+      <input type="text" id="pk" placeholder="개인키를 입력해주세요." value="">
+      <div>
+        <button id="import">가져오기</button>
+      </div>
     </div>
-    <div class="wr-30">
-      <button id="send-btn">보내기</button>
+
+    <div class="balance">
+      <div class="eth">
+        <div>이더리움 잔액</div>
+        <div id="eth-balance">0 ETH</div>
+      </div>
+
+      <div class="nft">
+        <div>보유량 NFT 수량</div>
+        <div id="nft-token-count">0개</div>
+      </div>
     </div>
   </div>
 
-  <div class="radio">
-    <label for="eth">ETH</label>
-    <input id="eth" type="radio" name="type" value="eth" checked>
-    <label for="erc20">ERC20</label>
-    <input id="erc20" type="radio" name="type" value="erc20">
-  </div>
+  <hr class="mint-hr">
 
-  <div class="create-account search-container">
-    <div class="wr-35">
-      <input type="text" id="pk" placeholder="개인키를 입력해주세요" value="">
+  <div class="mint container">
+    <div>
+      <input type="text" id="author" placeholder="작성자">
     </div>
-    <div class="wr-35">
-      <input type="text" id="ca" placeholder="CA를 입력해주세요" value="">
+    <div>
+      <label for="file-upload">업로드</label>
+      <input type="file" id="file-upload">
     </div>
-    <div class="wr-30">
-      <button id="recovery-btn">복구</button>
+    <div>
+      <button id="nft-mint">NFT 발행</button>
     </div>
   </div>
 
-  <div class="popup" id="popup">
-    <input type="text" id="to" placeholder="to">
-    <input type="text" id="value" placeholder="value(ETH)">
-    <button id="confirm-btn">확인</button>
+  <hr class="information-hr">
+
+  <div class="information container">
+    <div>
+      <input type="text" id="tokenId" placeholder="NFT tokenId를 입력해주세요">
+    </div>
+    <div>
+      <button id="search">NFT 정보 조회</button>
+    </div>
+
+    <div class="nft-desc">
+      <div class="author">
+        <div>작성자 </div>
+        <div id="nft-desc-author">박정태</div>
+      </div>
+      <div class="datetime">
+        <div>작성된 날짜 </div>
+        <div id="nft-desc-datetime">2022-10-08</div>
+      </div>
+      <div class="img">
+        <img src="" id="nft-desc-img"></img>
+      </div>
+    </div>
   </div>
 
-  <script src="./state.js"></script>
-  <script src="./wallet.js"></script>
-  <script src="./erc20.js"></script>
   <script src="./eth.js"></script>
+  <script src="./render.js"></script>
   <script src="./main.js"></script>
 </body>
 
